@@ -1,0 +1,101 @@
+1. Problem Statement
+Write a program that allows the user to track books that they have read. The user is be able to add new books, view all stored books, and search for books by title or author. Each book include a title, author, genre, and year. The data is saved into an SQLite database for storage and retrieved when the program runs. The program should use a menu system for user interaction and display results.
+
+Nouns:
+Books, Title, Author, Genre, Year, Menu, Records, Database
+
+Verbs:
+Add, View, Search, Enter, Store, Retrieve, Display, Select
+
+
+2. Defining Diagram
+INPUTS:
+
+Title, Author, Genre, Year, Menu options
+
+PROCESSING:
+
+Display menu options
+
+If the user selects "add," collect book info and store them in the database
+
+If user selects "view," retrieve all books from the database
+
+If user selects "search," search books by title or author
+
+Loop menu until user selects "exit"
+
+Format and display books in rows
+
+OUTPUTS:
+
+Table of books stored in the database
+
+Search results based on user input
+
+
+3. Solution Algorithm
+LibraryManager
+  display separator
+  display title
+  display menu
+  get all books from database
+
+  WHILE True
+    prompt user for menu option
+
+    IF option is 1
+      display all books
+    IF option is 2
+      get user input for title, author, genre, year
+      insert book into database
+      refresh book list
+    IF option is 3
+      get search field and value
+      search books in database
+      display search results
+    IF option is 4
+      display menu again
+    IF option is 5
+      say goodbye and break
+    ELSE
+      print invalid option
+  END WHILE
+END
+
+4. Test Plans
+  1. Input:
+     Title: The Anatomy Of Evil
+     Author: Michael H. Stone
+     Genre: True Crime
+     Year: 2009
+
+Expected Output:
+Title                     Author             Genre               Year
+---------------------------------------------------------------------
+The Anatomy Of Evil       Michael H. Stone   True Crime          2009
+
+  2. Input:
+     Title: The Denial of Death
+     Author: Ernest Becker
+     Genre: General Nonfiction
+     Year: 1997
+
+Expected Output:
+Title                     Author             Genre               Year
+---------------------------------------------------------------------
+The Denial of Death      Ernest Becker       General Nonfiction  1997
+
+  3. Input:
+     Title: Physics of The Future
+     Author: Michio Kaku
+     Genre: Popular Science
+     Year: 2011
+
+Expected Output:
+Title                     Author             Genre               Year
+---------------------------------------------------------------------
+Physics of The Future     Michio Kaku        Popular Science     2011
+
+
+
